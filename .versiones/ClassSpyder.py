@@ -82,24 +82,23 @@ class Spyder(object):
     def getPdfsToTxt(self):
         self.__linksToTxt("pdfs.txt", self.getPdfs())
 
-    # Este metodo pretende buscar la frecuencia de palabras dentro del contenido de la pagina web
-    # Sin embargo, está regular, habria que darle una buena pensada
-    #
-    # def frecuencias(self):
-    #     texto = self.html
-    #     diccionario = dict()
-    #     separadores = ",.;:!?¿¡+*(){}|"
-    #     # etiquetas = """<>=\/"""
-    #     for i in separadores:
-    #         texto = texto.replace(i, ' ')
-    #     texto = texto.split()
-    #     for p in texto:
-    #         if len(p) <= 8:     #Afinar esto
-    #             diccionario[p] = diccionario.get(p, 0) + 1
-    #     newfich = open("frecuencias.txt", 'w')
-    #     for k in diccionario.keys():
-    #         newfich.write("{0} := {1}".format(k, diccionario.get(k)) + '\n')
-    #     newfich.close()
+    # Esta función tendrías que comentarmela, no sé que clase de frecuencias estás buscando
+    # o calculando
+    def frecuencias(self):
+        texto = self.html
+        diccionario = dict()
+        separadores = ",.;:!?¿¡+*(){}|"
+        # etiquetas = """<>=\/"""
+        for i in separadores:
+            texto = texto.replace(i, ' ')
+        texto = texto.split()
+        for p in texto:
+            if len(p) <= 8:     #Afinar esto
+                diccionario[p] = diccionario.get(p, 0) + 1
+        newfich = open("frecuencias.txt", 'w')
+        for k in diccionario.keys():
+            newfich.write("{0} := {1}".format(k, diccionario.get(k)) + '\n')
+        newfich.close()
 
 # Ejemplo
 spyder = Spyder("https://www.boe.es/boe/dias/2019/01/02/")
